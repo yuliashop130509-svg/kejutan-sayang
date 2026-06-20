@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Cinta Kami 💕</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="app-body">
+
+  <div class="floating-hearts"></div>
+
+  <nav class="navbar">
+    <a href="#beranda" class="nav-link active" data-page="beranda">🏠 Beranda</a>
+    <a href="#kenangan" class="nav-link" data-page="kenangan">📸 Kenangan</a>
+    <a href="#surat" class="nav-link" data-page="surat">💌 Surat Cinta</a>
+    <a href="#kejutan" class="nav-link" data-page="kejutan">🎉 Kejutan</a>
+  </nav>
+
+  <!-- ===================== HALAMAN: BERANDA ===================== -->
+  <section class="page active" id="page-beranda">
+    <div class="container">
+      <h1 class="title">Untuk <span id="nama-pacar">Sayang</span> 💖</h1>
+      <p class="subtitle">Sudah sejauh ini perjalanan cinta kita...</p>
+
+      <div class="card">
+        <p style="margin-bottom: 10px; font-weight: 600;">⏳ Lamanya kita bersama:</p>
+        <div class="countdown">
+          <div class="box">
+            <span class="num" id="cd-hari">0</span>
+            <span class="label">Hari</span>
+          </div>
+          <div class="box">
+            <span class="num" id="cd-jam">00</span>
+            <span class="label">Jam</span>
+          </div>
+          <div class="box">
+            <span class="num" id="cd-menit">00</span>
+            <span class="label">Menit</span>
+          </div>
+          <div class="box">
+            <span class="num" id="cd-detik">00</span>
+            <span class="label">Detik</span>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">
+          ...dan akan terus bertambah selamanya 🥰
+        </p>
+      </div>
+
+      <button id="btn-mulai" class="btn">✨ Mulai Kejutan ✨</button>
+    </div>
+
+    <footer>Dibuat dengan ❤️ untuk orang yang paling kusayangi</footer>
+  </section>
+
+  <!-- ===================== HALAMAN: KENANGAN ===================== -->
+  <section class="page" id="page-kenangan">
+    <div class="container">
+      <h1 class="title">Galeri Kenangan Kita 📸</h1>
+      <p class="subtitle">Setiap foto punya cerita dan tawa yang tak terlupakan</p>
+
+      <!--
+        CARA MENGGANTI FOTO:
+        1. Siapkan folder bernama "foto" di dalam folder proyek ini.
+        2. Masukkan foto-foto kalian, misal: foto1.jpg, foto2.jpg, dst.
+        3. Ganti "src" di bawah ini dari link placeholder menjadi "foto/foto1.jpg" dst.
+        4. Ganti juga teks caption sesuai momen di foto tersebut.
+      -->
+     <div class="gallery-grid">
+      <div class="photo-card">
+        <img src="photo7.jpeg" alt="Kenangan 1">
+        <div class="caption">Pertama kali bertemu 💞</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo8.jpeg" alt="Kenangan 2">
+        <div class="caption">Kencan pertama kita ☕</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo9.jpeg" alt="Kenangan 3">
+        <div class="caption">Liburan seru bersama 🌊</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo5.jpeg" alt="Kenangan 4">
+        <div class="caption">Momen konyol kita 😂</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo2.jpeg" alt="Kenangan 5">
+        <div class="caption">Hari spesial kamu 🎂</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo6.jpeg" alt="Kenangan 5">
+        <div class="caption">Hari spesial Aku 🎂</div>
+      </div>
+      <div class="photo-card">
+        <img src="photo4.jpeg" alt="Kenangan 6">
+        <div class="caption">Selalu bersama, sampai kapanpun 💍</div>
+      </div>
+      <div class="photo-card">
+        <img src="bersama.jpeg" alt="Kenangan 6">
+        <div class="caption">Photobook ala rumahan🫶</div>
+      </div>
+    </div>
+
+      <a href="#surat" class="btn nav-link" data-page="surat">Lanjut Baca Surat Cinta ➜</a>
+    </div>
+
+    <!-- Lightbox untuk memperbesar foto -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Foto diperbesar">
+    </div>
+
+    <footer>Klik foto untuk memperbesar 🔍</footer>
+  </section>
+
+  <!-- ===================== HALAMAN: SURAT CINTA ===================== -->
+  <section class="page" id="page-surat">
+    <div class="container">
+      <h1 class="title">Sepucuk Surat Untukmu 💌</h1>
+      <p class="subtitle">Tunggu sebentar ya, sedang kutulis dengan sepenuh hati...</p>
+
+      <div class="letter">
+        <p id="typed-text"></p>
+      </div>
+
+      <a href="#kejutan" id="btn-lanjut" class="btn nav-link" data-page="kejutan" style="display:none;">Buka Kejutan Terakhir 🎉</a>
+    </div>
+
+    <footer>Setiap kata ditulis dengan cinta 💕</footer>
+  </section>
+
+  <!-- ===================== HALAMAN: KEJUTAN ===================== -->
+  <section class="page" id="page-kejutan">
+    <canvas id="fireworks-canvas"></canvas>
+
+    <div class="surprise-content">
+      <div class="container">
+        <h1 class="title">I love u, <span class="nama-pacar-auto">Sayang</span>! 🎆</h1>
+        <p class="subtitle" style="color:#ffe0ee;">Terima kasih sudah menjadi bagian terindah dalam hidupku</p>
+
+        <div class="card">
+          <p style="font-size:1.05rem; line-height:1.8;">
+            Tap atau klik di mana saja pada layar untuk meletuskan kembang api! 🎇
+          </p>
+        </div>
+
+        <a href="#beranda" class="btn btn-secondary nav-link" data-page="beranda">Kembali ke Awal 🔁</a>
+      </div>
+
+      <footer style="color:#ffe0ee;">I love you, today and always 💖</footer>
+    </div>
+  </section>
+
+  <!-- Popup kejutan -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup-box">
+      <div class="emoji">🎁💖</div>
+      <h2>Ada kejutan untukmu!</h2>
+      <p style="margin: 12px 0;">Ikuti perjalanan kecil ini ya, sayang...</p>
+      <button id="popup-close" class="btn">Lanjutkan ➜</button>
+    </div>
+  </div>
+
+  <!--
+    CARA MENAMBAHKAN MUSIK:
+    1. Siapkan file musik (format mp3), misal: musik.mp3
+    2. Letakkan file tersebut di folder yang sama dengan halaman ini.
+    3. Ganti "src" pada tag <audio> di bawah ini menjadi "musik.mp3"
+    Karena ini sekarang satu halaman (SPA), musik TIDAK PERNAH reload
+    saat pindah menu, jadi otomatis mulus tanpa putus sama sekali.
+  -->
+  <audio id="audio-latar" loop autoplay>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
